@@ -8,17 +8,7 @@ from station_statistic_dataDownload import data
 plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
 
-st.markdown(
-    """
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Arial&display=swap');
-    body {
-        font-family: 'Arial', sans-serif;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 # 匯入資料
 df = data()
@@ -49,8 +39,8 @@ if station == '依照日期':
         ax.grid(True)
         ax.legend()
         ax.set_title(staCode + ' ' +'人數統計')
-        ax.set_xlabel('日期')
-        ax.set_ylabel('人數')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Person Counts')
         st.pyplot(fig)            
 
 if station == '依照站別':
@@ -77,8 +67,8 @@ if station == '依照站別':
         
 
         ax.grid(True)
-        ax.set_xlabel('站別碼')
-        ax.set_ylabel('人數')
+        ax.set_xlabel('Station Code')
+        ax.set_ylabel('Person Counts')
         ax.set_title('入站人數前10名' + ' ' + '(' + str(sd[0]) + ' ~ ' + str(sd[1]) + ')')
         ax.legend()
         st.pyplot(fig)
@@ -95,8 +85,8 @@ if station == '依照站別':
             ax.text(bar.get_x() + bar.get_width()/2, yval, int(yval), ha='center', va='bottom') 
         
         ax.grid(True)
-        ax.set_xlabel('站別碼')
-        ax.set_ylabel('人數')
+        ax.set_xlabel('Station Code')
+        ax.set_ylabel('Person Counts')
         ax.set_title('出站人數前10名' + ' ' + '(' + str(sd[0]) + ' ~ ' + str(sd[1]) + ')')
         ax.legend()
         st.pyplot(fig)
