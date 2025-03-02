@@ -48,7 +48,7 @@ if station == '依照日期':
 
         st.write(staCode + " 入站人數最多的日期: " + str(df_sta.loc[max_entry_index, "日期"]) + ", 共" + str(df_sta.loc[max_entry_index, "入站人數"]) + '人')
 
-        st.write(staCode + " 出站人數最多的日期: " + str(df_sta.loc[max_exit_index, "日期"]) + ", 共" + str(df_sta.loc[max_entry_index, "出站人數"]) + '人')
+        st.write(staCode + " 出站人數最多的日期: " + str(df_sta.loc[max_exit_index, "日期"]) + ", 共" + str(df_sta.loc[max_exit_index, "出站人數"]) + '人')
 
         st.pyplot(fig)            
 
@@ -74,7 +74,8 @@ if station == '依照站別':
         max_entry_index = dfg_top10['入站人數'].idxmax()
         max_exit_index = dfg_tail10['出站人數'].idxmax()
         st.write('入站人數Top1為' + dfg_top10.loc[max_entry_index, '站別碼'] + ', 共' + str(dfg_top10.loc[max_entry_index, '入站人數']) + ' 人')
-        st.write('出站人數Top1為' + dfg_top10.loc[max_entry_index, '站別碼'] + ', 共' + str(dfg_top10.loc[max_exit_index, '出站人數']) + ' 人')
+
+        st.write('出站人數Top1為' + dfg_top10.loc[max_exit_index, '站別碼'] + ', 共' + str(dfg_top10.loc[max_exit_index, '出站人數']) + ' 人')
 
 
         # 入站人數畫圖
