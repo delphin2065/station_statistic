@@ -8,6 +8,18 @@ from station_statistic_dataDownload import data
 plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
 
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arial&display=swap');
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # 匯入資料
 df = data()
 st.header('台鐵車站人數統計')
